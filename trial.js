@@ -1,1 +1,1 @@
-consoloe.log(' hello world')
+consoloe.log(' hello world');
