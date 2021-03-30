@@ -1,0 +1,57 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test":" nyc --reporter=lcov --all=true mocha",
+    "devStart": "nodemon server.js",
+    "devStartAuth": "nodemon authServer.js",
+    "start": "nodemon main.js",
+    "eslint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
+    "eslint-fix": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijay9901/microservices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijay9901/microservices/issues"
+  },
+  "homepage": "https://github.com/vijay9901/microservices#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.7",
+    "opts": "^2.0.2",
+    "throw.js": "^5.0.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    
+    "chai": "^4.3.4",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "simple-git-hooks": "^2.2.0",
+    "sinon": "^10.0.0",
+    "nyc": "^15.1.0",
+    "mocha": "^8.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run eslint"
+    }
+  }
+}
